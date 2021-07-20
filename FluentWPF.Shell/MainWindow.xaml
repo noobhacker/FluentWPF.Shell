@@ -60,11 +60,9 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="260" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Grid Background="White"
-              Opacity="0.12" />
         <Grid fw:PointerTracker.Enabled="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -133,19 +131,23 @@
                 </ItemsControl>
             </Grid>
         </Grid>
-        <Frame Grid.Column="1"
-               Name="NavigationFrame"
-               NavigationUIVisibility="Hidden"
-               Opacity="0"
-               RenderTransformOrigin="0.5,0.5">
-            <Frame.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform />
-                    <SkewTransform />
-                    <RotateTransform />
-                    <TranslateTransform />
-                </TransformGroup>
-            </Frame.RenderTransform>
-        </Frame>
+        <fw:DropShadowPanel Grid.Column="1"
+                            ShadowMode="Outer"
+                            Background="#66FFFFFF">
+            <Frame Name="NavigationFrame"
+                   NavigationUIVisibility="Hidden"
+                   Opacity="0"
+                   RenderTransformOrigin="0.5,0.5">
+                <Frame.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Frame.RenderTransform>
+            </Frame>
+        </fw:DropShadowPanel>
+       
     </Grid>
 </fw:AcrylicWindow>
