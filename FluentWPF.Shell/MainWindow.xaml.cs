@@ -25,6 +25,12 @@ namespace FluentWPF.Shell
         {
             InitializeComponent();
             DataContext = _viewModel;
+
+            if(_viewModel.MenuItems.Count != 0)
+            {
+                NavigationFrame.Navigate(_viewModel.MenuItems[0].Page);
+                _viewModel.MenuItems[0].ChoosenIndicator = Visibility.Visible;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

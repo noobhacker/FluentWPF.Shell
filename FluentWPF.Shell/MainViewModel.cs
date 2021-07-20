@@ -20,6 +20,7 @@ namespace FluentWPF.Shell
             MenuItems = new ObservableCollection<MenuItemViewModel>();
             BottomMenuItems = new ObservableCollection<MenuItemViewModel>();
 
+
             Title = "Test FluentWPF.Shell Library";
             MenuItems.Add(new MenuItemViewModel
             {
