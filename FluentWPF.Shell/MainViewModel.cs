@@ -20,18 +20,18 @@ namespace FluentWPF.Shell
             MenuItems = new ObservableCollection<MenuItemViewModel>();
             BottomMenuItems = new ObservableCollection<MenuItemViewModel>();
 
-
             Title = "Test FluentWPF.Shell Library";
             MenuItems.Add(new MenuItemViewModel
             {
                 Name = "Test Page 1",
                 Glyph = "",
-                ChoosenIndicator = System.Windows.Visibility.Visible
+                Page = new Page1()
             });
             MenuItems.Add(new MenuItemViewModel
             {
                 Name = "Test Page 2",
-                Glyph = ""
+                Glyph = "",
+                Page = new Page2()
             });
         }
     }
