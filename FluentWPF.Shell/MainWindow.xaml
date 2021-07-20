@@ -13,9 +13,11 @@
                   BorderBrush="Transparent">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="240" />
+            <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        <Grid Background="White"
+              Opacity="0.1" />
         <Grid fw:PointerTracker.Enabled="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -84,9 +86,6 @@
                 </ItemsControl>
             </Grid>
         </Grid>
-        <Grid Grid.Column="1"
-              Background="White"
-              Opacity="0.2" />
         <Frame Grid.Column="1" Name="NavigationFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </fw:AcrylicWindow>

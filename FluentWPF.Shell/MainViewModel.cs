@@ -23,7 +23,7 @@ namespace FluentWPF.Shell
             Title = "Test FluentWPF.Shell Library";
             MenuItems.Add(new MenuItemViewModel
             {
-                Name = "Test Page 1",
+                Name = "Test Page 1 with long title",
                 Glyph = "",
                 Page = new Page1()
             });
