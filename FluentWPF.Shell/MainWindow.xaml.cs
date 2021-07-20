@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -43,8 +44,7 @@ namespace FluentWPF.Shell
             {
                 selectedButton = _viewModel.BottomMenuItems.First(x => x.Name == tag);
             }
-            NavigationFrame.Navigate(selectedButton.Page);
-
+           
             // clear off main menu selected indicator
             var otherButtons = _viewModel.MenuItems.Where(x => x.Name != tag);
             foreach(var button in otherButtons)
@@ -61,6 +61,30 @@ namespace FluentWPF.Shell
 
             // set selected item in menu indicator
             selectedButton.ChoosenIndicator = Visibility.Visible;
+
+            // perform navigation
+            var fadeAwayAnimation = this.FindResource("FadeAway") as Storyboard;
+
+            fadeAwayAnimation.Completed += (_, __) =>
+            {
+                NavigationFrame.Navigate(selectedButton.Page);
+                StartAnimationByName("FadeInWithMotion");
+            };
+
+            fadeAwayAnimation.Begin();
+
         }
+
+        private void AcrylicWindow_ContentRendered(object sender, EventArgs e)
+        {
+            StartAnimationByName("FadeIn");
+        }
+
+        private void StartAnimationByName(string name)
+        {
+            var sb = this.FindResource(name) as Storyboard;
+            sb.Begin();
+        }
+
     }
 }

@@ -10,14 +10,61 @@
                   Height="450"
                   Width="800"
                   ExtendViewIntoTitleBar="True"
-                  BorderBrush="Transparent">
+                  BorderBrush="Transparent" ContentRendered="AcrylicWindow_ContentRendered">
+    <Window.Resources>
+        <Storyboard x:Key="FadeAway">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                           Storyboard.TargetName="NavigationFrame">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.00"
+                                      Value="1" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.12"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="FadeInWithMotion">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                           Storyboard.TargetName="NavigationFrame">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.00"
+                                      Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.12"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)"
+                                           Storyboard.TargetName="NavigationFrame"
+                                           AccelerationRatio="0.4"
+                                           DecelerationRatio="0.6">
+                <EasingDoubleKeyFrame KeyTime="0"
+                                      Value="20" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.18"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="FadeIn">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+                                           Storyboard.TargetName="NavigationFrame">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.00"
+                                      Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.24"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)"
+                                           Storyboard.TargetName="NavigationFrame"
+                                           AccelerationRatio="0.4"
+                                           DecelerationRatio="0.6">
+                <EasingDoubleKeyFrame KeyTime="0"
+                                      Value="0" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.24"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid Background="White"
-              Opacity="0.1" />
+              Opacity="0.12" />
         <Grid fw:PointerTracker.Enabled="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -86,6 +133,19 @@
                 </ItemsControl>
             </Grid>
         </Grid>
-        <Frame Grid.Column="1" Name="NavigationFrame" NavigationUIVisibility="Hidden"/>
+        <Frame Grid.Column="1"
+               Name="NavigationFrame"
+               NavigationUIVisibility="Hidden"
+               Opacity="0"
+               RenderTransformOrigin="0.5,0.5">
+            <Frame.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform />
+                    <SkewTransform />
+                    <RotateTransform />
+                    <TranslateTransform />
+                </TransformGroup>
+            </Frame.RenderTransform>
+        </Frame>
     </Grid>
 </fw:AcrylicWindow>
