@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:FluentWPF.Shell"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Page3"
-      TextElement.Foreground="White">
+      Title="Page3">
 
     <Grid>
         <TextBlock Text="This is Page 3"
