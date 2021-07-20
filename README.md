@@ -1,5 +1,7 @@
 # FluentWPF.Shell
 
+The main navigation frame that looks like Windows 10 settings.
+
 ![Alt text](https://user-images.githubusercontent.com/16358189/126342908-dd67c0df-b696-445d-a126-6bf61845a609.gif "gif")
 
 Tried my best to match the margins from Windows 10 settings.
