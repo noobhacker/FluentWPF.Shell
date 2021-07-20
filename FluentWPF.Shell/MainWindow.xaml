@@ -9,7 +9,8 @@
                   Title="{Binding Title}"
                   Height="450"
                   Width="800"
-                  ExtendViewIntoTitleBar="True">
+                  ExtendViewIntoTitleBar="True"
+                  BorderBrush="Transparent">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240" />
