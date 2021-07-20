@@ -33,6 +33,13 @@ namespace FluentWPF.Shell
                 Glyph = "",
                 Page = new Page2()
             });
+
+            BottomMenuItems.Add(new MenuItemViewModel
+            {
+                Name = "Test Page 3",
+                Glyph = "",
+                Page = new Page3()
+            });
         }
     }
 }

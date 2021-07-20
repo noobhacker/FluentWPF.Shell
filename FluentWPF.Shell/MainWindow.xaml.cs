@@ -54,7 +54,7 @@ namespace FluentWPF.Shell
 
             // clear off bottom menu selected indicator
             var bottomButtons = _viewModel.BottomMenuItems.Where(x => x.Name != tag);
-            foreach (var button in otherButtons)
+            foreach (var button in bottomButtons)
             {
                 button.ChoosenIndicator = Visibility.Hidden;
             }
