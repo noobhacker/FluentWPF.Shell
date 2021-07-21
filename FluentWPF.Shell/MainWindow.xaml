@@ -10,7 +10,9 @@
                   Height="450"
                   Width="800"
                   ExtendViewIntoTitleBar="True"
-                  BorderBrush="Transparent" ContentRendered="AcrylicWindow_ContentRendered">
+                  BorderBrush="Transparent" 
+                  NoiseOpacity="0"
+                  ContentRendered="AcrylicWindow_ContentRendered">
     <Window.Resources>
         <Storyboard x:Key="FadeAway">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
